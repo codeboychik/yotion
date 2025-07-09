@@ -1,4 +1,4 @@
-package com.yotion.document.config.aerospike;
+package com.yotion.document.config;
 
 import com.aerospike.client.AerospikeClient;
 import com.aerospike.client.policy.WritePolicy;
