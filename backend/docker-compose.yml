@@ -1,0 +1,17 @@
+services:
+  document-db:
+    image: aerospike/aerospike-server
+    container_name: aerospike
+    ports:
+      - "3000-3002:3000-3002"
+    volumes:
+      - ./config/dev/document-db/aerospike.conf:/etc/aerospike/aerospike.conf
+      - ./data:/opt/aerospike/data
+
+  document:
+    build:
+      context: ./document
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8000:8000"
